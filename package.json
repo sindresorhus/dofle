@@ -1,0 +1,46 @@
+{
+  "name": "dofle",
+  "version": "0.0.0",
+  "description": "CLI that opens a random photo of my cat Dofle",
+  "license": "MIT",
+  "repository": "sindresorhus/dofle",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bin": {
+    "dofle": "cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "cli.js",
+    "pics"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    "dofle",
+    "cat",
+    "pet",
+    "photo",
+    "pic",
+    "picture",
+    "random"
+  ],
+  "dependencies": {
+    "meow": "^3.7.0",
+    "opn": "^5.0.0",
+    "random-item": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "*",
+    "execa": "^0.6.3",
+    "xo": "*"
+  }
+}
