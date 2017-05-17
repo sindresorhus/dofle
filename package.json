@@ -1,6 +1,6 @@
 {
   "name": "dofle",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "CLI that opens a random photo of my cat Dofle",
   "license": "MIT",
   "repository": "sindresorhus/dofle",
