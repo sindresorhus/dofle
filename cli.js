@@ -15,7 +15,7 @@ const picsDir = path.join(__dirname, 'photos');
 const pics = fs.readdirSync(picsDir).filter(x => !x.startsWith('.'));
 let pic = randomItem(pics);
 
-const lastPicPath = path.join(__dirname, '.last-pic');
+const lastPicPath = path.join(__dirname, '.last-photo');
 if (fs.existsSync(lastPicPath) && fs.readFileSync(lastPicPath, 'utf8') === pic) {
 	pic = randomItem(pics);
 }
