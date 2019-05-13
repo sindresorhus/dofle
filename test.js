@@ -2,13 +2,13 @@ import fs from 'fs';
 import test from 'ava';
 import execa from 'execa';
 
-function cleanup() {
+const cleanup = () => {
 	try {
 		fs.unlinkSync('.last-photo');
-	} catch (err) {}
-}
+	} catch (_) {}
+};
 
-test(async t => {
-	await t.notThrows(execa('./cli.js'));
+test('main', async t => {
+	await t.notThrowsAsync(execa('./cli.js'));
 	cleanup();
 });

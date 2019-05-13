@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const meow = require('meow');
-const opn = require('opn');
+const open = require('open');
 const randomItem = require('random-item');
 
 meow(`
@@ -11,14 +11,17 @@ meow(`
 	  $ dofle
 `);
 
-const picsDir = path.join(__dirname, 'photos');
-const pics = fs.readdirSync(picsDir).filter(x => !x.startsWith('.'));
-let pic = randomItem(pics);
+const photosDirectory = path.join(__dirname, 'photos');
+const photos = fs.readdirSync(photosDirectory).filter(directory => !directory.startsWith('.'));
+let randomPhoto = randomItem(photos);
 
 const lastPicPath = path.join(__dirname, '.last-photo');
-if (fs.existsSync(lastPicPath) && fs.readFileSync(lastPicPath, 'utf8') === pic) {
-	pic = randomItem(pics);
+if (fs.existsSync(lastPicPath) && fs.readFileSync(lastPicPath, 'utf8') === randomPhoto) {
+	randomPhoto = randomItem(photos);
 }
-fs.writeFileSync(lastPicPath, pic);
 
-opn(path.join(picsDir, pic), {wait: false}).catch(console.error);
+fs.writeFileSync(lastPicPath, randomPhoto);
+
+(async () => {
+	await open(path.join(photosDirectory, randomPhoto));
+})();
