@@ -1,4 +1,4 @@
-# dofle [![Build Status](https://travis-ci.org/sindresorhus/dofle.svg?branch=master)](https://travis-ci.org/sindresorhus/dofle)
+# dofle
 
 > CLI that opens a random photo of my cat [Dofle](https://github.com/sindresorhus/ama/issues/2)
 
