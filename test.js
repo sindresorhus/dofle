@@ -1,11 +1,11 @@
-import fs from 'fs';
+import fs from 'node:fs';
 import test from 'ava';
 import execa from 'execa';
 
 const cleanup = () => {
 	try {
 		fs.unlinkSync('.last-photo');
-	} catch (_) {}
+	} catch {}
 };
 
 test('main', async t => {

@@ -1,15 +1,19 @@
 #!/usr/bin/env node
-'use strict';
-const fs = require('fs');
-const path = require('path');
-const meow = require('meow');
-const open = require('open');
-const randomItem = require('random-item');
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import meow from 'meow';
+import open from 'open';
+import randomItem from 'random-item';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 meow(`
 	Usage
 	  $ dofle
-`);
+`, {
+	importMeta: import.meta,
+});
 
 const photosDirectory = path.join(__dirname, 'photos');
 const photos = fs.readdirSync(photosDirectory).filter(directory => !directory.startsWith('.'));
